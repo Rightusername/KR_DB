@@ -1,0 +1,141 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Terminal</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <style>
+		.dishes-wrap {
+    display: inline-block;
+    height: 100%;
+    width: 40%;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #ffe375;
+    vertical-align: top;
+}
+
+.menu {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    overflow: auto;
+    font-size: 20px;
+}
+
+.menu-label {
+    background: #ffe375;
+    color: white;
+    font-size: 34px;
+    height: 40px;
+    text-align: center;
+}
+
+.menu-list-item {
+    padding: 0 10px;
+}
+
+.menu-list-item-price {
+    float: right;
+    display: inline-block;
+}
+
+.menu-list-item-addBtn {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    background: url('img/add-btn.ico') 0 0 no-repeat;
+    background-size: contain;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-list-item-delBtn {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    background: url('img/del-btn.png') 0 0 no-repeat;
+    background-size: contain;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-list-header {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+    </style>
+</head>
+<body>
+	<div class="dishes-wrap">
+		<div class="menu">
+			<div class="menu-label">Меню</div>
+		</div>
+	</div>
+</body>
+<script>
+var url = "http://localhost:3000";
+
+$(document).ready(function () {
+	getDishes();
+
+	function createMenuList(ar){
+		var f = document.createDocumentFragment();
+		var cat = {};
+
+		for(var i = 0; i<ar.length; i++){
+			cat[ar[i].category] = null;
+		}
+
+		for(var j in cat){
+			var div_header = document.createElement('div');
+			div_header.className = "menu-list-header";
+			div_header.innerHTML = j;
+			f.appendChild(div_header);
+			for(var i = 0; i<ar.length; i++){
+				if(ar[i].category == j){
+					f.appendChild(createMenuListItem(ar[i]));
+				}
+			}
+		}	
+		return f;
+	}	
+
+	function createMenuListItem(item){
+		var d = document.createElement('div');
+		d.className = "menu-list-item";
+		d.dataset.price = item.price;
+		d.dataset.category = item.category;
+		console.log(item);
+		d.dataset.weight = item.weight;
+		d.dataset.name = item.name;
+		d.innerHTML = item.name + " " +item.weight+ " г   ";
+
+		var price = document.createElement('div');
+		price.className = "menu-list-item-price";
+		price.innerHTML = item.price + " грн";
+		d.appendChild(price);
+		return d;
+	}	
+
+	function getDishes(){
+		$.ajax({
+			method: 'GET',
+			url: '/dishes',
+			success: function (s) {
+				$('.menu').append(createMenuList(s));
+			}
+		});
+	}
+
+});
+</script>
+</html>

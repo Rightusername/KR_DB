@@ -1,0 +1,179 @@
+body, html, .wrap {
+    margin: 0;
+    height: 100%;
+    min-height: 600px;
+    font-size: 0;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.dishes-wrap {
+    display: inline-block;
+    height: 100%;
+    width: 40%;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #ffe375;
+    vertical-align: top;
+}
+
+.menu {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    overflow: auto;
+    font-size: 20px;
+}
+
+.menu-label {
+    background: #ffe375;
+    color: white;
+    font-size: 34px;
+    height: 40px;
+    text-align: center;
+}
+
+.menu-list-item {
+    padding: 0 10px;
+}
+
+.menu-list-item-price {
+    float: right;
+    display: inline-block;
+}
+
+.menu-list-item-addBtn {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    background: url('img/add-btn.ico') 0 0 no-repeat;
+    background-size: contain;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-list-item-delBtn {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    background: url('img/del-btn.png') 0 0 no-repeat;
+    background-size: contain;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-list-header {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.order-wrap {
+    display: inline-block;
+    height: 100%;
+    width: 60%;
+    box-sizing: border-box;
+    background: orange;
+    vertical-align: top;
+}
+
+.order {
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 65%;
+    background: #f4d1ff;
+    padding: 10px;
+}
+
+.order-label {
+    display: inline-block;
+    width: 200px;
+}
+
+.order-table {
+    display: inline-block;
+    width: 160px;
+}
+
+.order-waiter {
+    display: inline-block;
+    width: 200px;
+}
+
+#table-id {
+    width: 50px;
+}
+
+#table-waiter-id {
+    width: 50px;
+}
+
+.order-nav {
+    font-size: 20px;
+    padding: 8px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.order-items {
+    width: 100%;
+    box-sizing: border-box;
+    height: calc(100% - 40px);
+    background: white;
+    overflow: auto;
+    padding: 10px;
+}
+
+.navigations {
+    width: 100%;
+    box-sizing: border-box;
+    height: 35%;
+    background: #e5e5e5;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.nav-totalprice {
+    font-size: 50px;
+    box-sizing: border-box;
+    height: 60%;
+}
+
+.nav-btns {
+    font-size: 0;
+    box-sizing: border-box;
+    height: 40%;
+}
+
+#nav-close-btn {
+    font-size: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    height: 100%;
+    cursor: pointer;
+    color: white;
+    background: #ff5b5b;
+}
+
+#nav-confirm-btn {
+    font-size: 50px;
+    width: 50%;
+    box-sizing: border-box;
+    height: 100%;
+    cursor: pointer;
+    color: white;
+    background:#6895ff;
+}
+
+.exit-btn{
+    position: fixed;
+    top:0;
+    right:0;
+    font-size: 20px;
+    padding: 10px;
+    
+}

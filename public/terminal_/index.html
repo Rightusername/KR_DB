@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Terminal</title>
+	<link rel="stylesheet" type="text/css" href="/terminal_/styles.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="wrap">
+	<div class="dishes-wrap">
+		<div class="menu">
+			<div class="menu-label">Меню</div>
+		</div>
+	</div>
+	<div class="order-wrap">
+		<div class="order">
+			<div class="order-nav">
+				<div class="order-label">Заказ</div>	
+				<div class="order-table">№Стола <input id="table-id" type="number" min="1" placeholder="Стол №"></div>	
+				<div class="order-waiter">№Официанта <input id="table-waiter-id" type="number" min="1" placeholder="Официант №"></div>	
+			</div>
+			<div class="order-items"></div>
+		</div>
+		<div class="navigations">
+			<div class="nav-totalprice">К оплате: 0</div>
+			<div class="nav-btns">
+				<button id="nav-close-btn">Отмена</button>
+				<button id="nav-confirm-btn">Оплатить</button>
+			</div>
+		</div>
+		<a class="exit-btn" href="/logout">Выход</a>
+	</div>
+
+	<script src="/terminal_/script.js"></script>
+</div>
+</body>
+</html>
